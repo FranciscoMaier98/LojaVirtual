@@ -1,0 +1,104 @@
+USE nova_loja;
+CREATE TABLE if NOT EXISTS products(
+id INT NOT NULL AUTO_INCREMENT,
+id_category INT NOT NULL,
+id_brand INT NOT NULL,
+name VARCHAR(100) NOT NULL,
+description TEXT,
+stock INT NOT NULL,
+price FLOAT (5,2),
+price_from FLOAT(5,2),
+rating FLOAT(5,2) NOT NULL,
+featured TINYINT(1),
+sale TINYINT(1),
+bestsaller TINYINT(1),
+new_product TINYINT(1),
+options VARCHAR(200),   
+PRIMARY KEY (id)
+) DEFAULT CHARSET= UTF8;
+
+
+
+USE nova_loja;
+CREATE TABLE if NOT EXISTS products_options(
+id INT NOT NULL AUTO_INCREMENT,
+id_product INT NOT NULL,
+id_option INT NOT NULL,
+p_value VARCHAR(100) NOT NULL,
+PRIMARY KEY(id)
+)DEFAULT CHARSET= UTF8;
+
+
+
+USE nova_loja;
+CREATE TABLE if NOT EXISTS (
+id INT NOT NULL AUTO_INCREMENT,
+id_product INT NOT NULL,
+url VARCHAR NOT NULL,
+PRIMARY KEY(id)
+)DEFAULT CHARSET= UTF8;
+
+
+
+USE nova_loja;
+CREATE TABLE if NOT EXISTS rates(
+id INT NOT NULL AUTO_INCREMENT,
+id_product INT NOT NULL,
+id_user INT NOT NULL,
+date_rated DATETIME NOT NULL,
+points INT NOT NULL,
+comment TEXT,
+PRIMARY KEY(id)
+) DEFAULT CHARSET=UTF8;
+
+
+
+USE nova_loja;
+CREATE TABLE if NOT EXISTS users(
+id INT NOT NULL AUTO_INCREMENT,
+email VARCHAR(100) NOT NULL,
+password VARCHAR(32) NOT NULL,
+PRIMARY KEY(id)
+) DEFAULT CHARSET=UTF8;
+
+
+USE nova_loja;
+CREATE TABLE if NOT EXISTS pages(
+id INT NOT NULL AUTO_INCREMENT,
+title VARCHAR(100) NOT NULL,
+body TEXT NOT NULL,
+PRIMARY KEY(id)
+)DEFAULT CHARSET=UTF8;
+
+
+USE nova_loja;
+CREATE TABLE if NOT EXISTS purchases(
+id INT NOT NULL AUTO_INCREMENT,
+id_user INT NOT NULL,
+id_coupon INT,
+total_amount FLOAT(5,2) NOT NULL,
+payment_type INT,
+payment_status INT NOT NULL,
+PRIMARY KEY(id)
+) DEFAULT CHARSET=UTF8;
+
+
+USE nova_loja;
+CREATE TABLE if NOT EXISTS coupons(
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+coupon_type INT NOT NULL,
+coupon_value FLOAT(5,2) NOT NULL,
+PRIMARY KEY(id) 
+)DEFAULT CHARSET=UTF8;
+
+
+USE nova_loja;
+CREATE TABLE if NOT EXISTS purchases_products(
+id INT NOT NULL AUTO_INCREMENT,
+id_purchase INT NOT NULL,
+id_product INT NOT NULL,
+quantity INT NOT NULL,
+PRIMARY KEY(id) 
+)DEFAULT CHARSET=UTF8;
+
