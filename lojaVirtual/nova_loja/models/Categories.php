@@ -23,10 +23,6 @@
 
             
 
-            echo '<pre>';
-            print_r($array);
-            exit;
-            return $array;
         }
 
         private function organizeCategory(&$array) { //Indica q o mesmo valor enviado para essa função terá seus valores alterados tmbm
