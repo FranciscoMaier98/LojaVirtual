@@ -1,6 +1,6 @@
 <?php
 
-    class products extends model {
+    class Products extends model {
 
         public function getList($offset = 0, $limit = 3){
             

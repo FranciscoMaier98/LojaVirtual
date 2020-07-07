@@ -2,10 +2,11 @@
     class Brands extends model{
 
         public function getElementById($id){
-            $dados = array();
+            $data = array(); //dados
 
             $sql = "SELECT name FROM BRANDS WHERE id=:id";
-            $sql = $this->query->prepare();
+            
+            $sql = $this->db->prepare($sql);
             $sql->bindValue(":id", $id);
             $sql->execute();
 

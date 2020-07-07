@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -69,16 +70,43 @@
 			<nav class="navbar">
 				<div class="container">
 					<ul class="nav navbar-nav">
+						
 						<li class="dropdown">
 					        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php $this->lang->get('SELECTCATEGORY')?>
 					        <span class="caret"></span></a>
 					        <ul class="dropdown-menu">
-					          <li><a href="#">Page 1-1</a></li>
+								<?php foreach($viewData['categories'] as $cat): ?>
+									<li>
+										<a href="<?php echo BASE_URL.'categories/enter/'.$cat['id']; ?>">
+											<?php echo $cat['name']; ?> <!--Carrega as categorias principais-->
+										</a>
+									</li>
+									<?php
+										if(count($cat['subs']) > 0) { //Verifica se há subcategorias
+											$this->loadView('menu_subcategory', array(
+												'subs' => $cat['subs'],
+												'level' => 1 
+											));
+										}
+									?>
+								<?php endforeach;?>
+					          
+					          <!--<li><a href="#">Page 1-1</a></li>
 					          <li><a href="#">Page 1-2</a></li>
-					          <li><a href="#">Page 1-3</a></li>
+					          <li><a href="#">Page 1-3</a></li>-->
 					        </ul>
 					      </li>
-						<li><a href="#">Categoria X</a></li>
+
+						<li>
+							<?php if(isset($viewData['category_filter'])):?>
+								<?php foreach($viewData['category_filter'] as $cf): ?>
+									<li>
+										<a href="<?php echo BASE_URL.'categories/enter/'.$cf['id'];?>"><?php echo $cf['name'];?></a>
+									</li>
+								<?php endforeach;?>
+							<?php endif;?>
+						</li>
+
 					</ul>
 				</div>
 			</nav>

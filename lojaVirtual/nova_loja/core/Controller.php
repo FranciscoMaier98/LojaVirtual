@@ -16,7 +16,7 @@ class controller {
 		include 'views/'.$viewName.'.php';
 	}
 
-	public function loadTemplate($viewName, $viewData = array()) {
+	public function loadTemplate($viewName, $viewData = array()) { //No TEmplate o viewData não sofre extract
 		include 'views/template.php';
 	}
 
