@@ -18,7 +18,7 @@
 
         }
 
-        public function get($word, $return=false) { // Mana a palavra e se irá ter retorno ou n
+        public function get($word, $return=false) { // Mana a palavra e se irá ter retorno ou não
             $text = $word;
 
             if(isset($this->ini[$word])) {
@@ -32,8 +32,6 @@
             }
 
         }
-
-        
     
     }   
 ?>

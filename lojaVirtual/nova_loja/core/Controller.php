@@ -10,7 +10,7 @@ class controller {
 		$this->lang = new Language(); // criando uma classe Language, que vai carregar a linguagem do site
 
 	}
-	
+
 	public function loadView($viewName, $viewData = array()) {
 		extract($viewData);
 		include 'views/'.$viewName.'.php';

@@ -2,13 +2,11 @@
 
     class langController extends controller{
 
-
         private $user;
 
         public function __construct() {
             parent::__construct();
         }
-
 
         public function index() {
 
@@ -18,8 +16,5 @@
             $_SESSION['lang'] = $lang;
             header("Location: ".BASE_URL);
         }
-
-
     }
-
 ?>

@@ -347,14 +347,17 @@ footer h3 {
 
 .product_tag_red {
 	background-color: #f8484a;
+	text-transform: uppercase;
 }
 
 .product_tag_green {
 	background-color: #59b210;
+	text-transform: uppercase;
 }
 
 .product_tag_blue {
 	background-color: #407ac5;
+	text-transform: uppercase;
 }
 
 .paginationItem {
@@ -387,4 +390,30 @@ footer h3 {
 
 .dropdown-menu {
 	width: 100%;
+}
+
+
+.filterbox {
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.filtertittle {
+	color:#59b210;
+	font-size:17px;
+	font-weight: bold;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #EEE;
+}
+
+
+.filteritem {
+	height: 25px;
+	font-size: 12px;
+}
+
+.filteritem label {
+	font-weight: normal;
 }
