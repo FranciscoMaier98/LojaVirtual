@@ -2,7 +2,7 @@
 
     class Products extends model {
 
-        public function getList($offset = 0, $limit = 3, $filters = array()){
+        public function getList($offset = 0, $limit = 3, $filters = array(),$random=false){
             
             $array = array();
 
@@ -13,6 +13,15 @@
             //da tabela brand é igual ao id_brand da tabela products. Também ocorre o mesmo com o nome da tabela categorias,
             //onde o id da tabela categorias deve ser igual ao id_category de products
 
+            $orderBySQL = "";
+            if ($random == true) {
+                $orderBySQL = "ORDER BY RAND()";
+            }
+
+            if (!empty($filters['toprated'])) {
+                $orderBySQL = "ORDER BY rating DESC";
+            }
+
             $where = $this->buildWhere($filters);
 
             $sql = "SELECT *, (select brands.name from brands where brands.id = products.id_brand)
@@ -20,6 +29,7 @@
             (select categories.name from categories where categories.id = products.id_category) as category_name 
             FROM products
             WHERE ".implode(' AND ', $where)."
+            ".$orderBySQL."
             LIMIT $offset, $limit"; 
 
             $sql = $this->db->prepare($sql);
@@ -321,6 +331,10 @@
 
             if(!empty($filters['sale'])) {
                 $where[] = "sale = '1'";
+            }
+
+            if(!empty($filters['featured'])) {
+                $where[] = "featured = '1'";
             }
 
             if(!empty($filters['options'])) {
