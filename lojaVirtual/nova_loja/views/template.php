@@ -294,11 +294,24 @@
 	    		<div class="container">
 	    			<div class="row">
 						<div class="col-xs-12 col-sm-8 col-sm-offset-2 no-padding">
+							
+							
+							
+							<form action="https://outlook.us17.list-manage.com/subscribe/post?u=9ae2ca4326e61ca60bd1890f0&amp;id=50aa2424e5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+								<input type="email" value="" name="EMAIL" class="subemail required email" id="mce-EMAIL" placeholder="<?php $this->lang->get('SUBSCRIBETEXT'); ?>">
+								<input type="hidden" name="b_9ae2ca4326e61ca60bd1890f0_50aa2424e5" tabindex="-1" value="">
+								<input type="submit" value="<?php $this->lang->get('SUBSCRIBEBUTTON'); ?>" name="subscribe" id="mc-embedded-subscribe" class="button">
+							</form>
+							
+							<!--<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+							End mc_embed_signup-->
+							<!--	
 							<form method="POST">
                                 <input class="subemail" name="email" placeholder="<?php $this->lang->get('SUBSCRIBETEXT'); ?>">
                                 <input type="submit" value="<?php $this->lang->get('SUBSCRIBEBUTTON'); ?>" />
-                            </form>
+                            </form>-->
 						</div>
+
 					</div>
 	    		</div>
 	    	</div>
